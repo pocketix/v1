@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Pocketix V1 Project Overview</title>
+	<style>
+        :root {
+            --primary: #4a90e2;
+            --accent: #00c9a7;
+            --bg: #f9fafa;
+            --text: #2c3e50;
+            --code-bg: #2e3b4e;
+            --code-text: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+        }
+
+        code, pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 1rem;
+            border-radius: 8px;
+            display: block;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+	</style>
+</head>
+<body>
+
+<h1>Pocketix V1 Project Overview</h1>
+<p><strong>Pocketix</strong> is a block- and form-based visual programming language and editor currently being developed
+	by <a href="mailto:ijohn@fit.vut.cz">Petr John</a> and <a href="mailto:hynek@fit.vut.cz">Jiří Hynek</a> at <a
+			href="https://www.fit.vut.cz/.en" target="_blank">BUT FIT</a>, primarily aimed at automating smart devices
+	on mobile phones.</p>
+
+<p>The first prototype was created through a collaboration between BUT FIT and <a href="https://www.logimic.com/cs/"
+																				  target="_blank">Logimic</a> as part of
+	the project <em>Services for Water Management and Monitoring Systems in Retention Basins</em>.</p>
+
+<p>More information is available on the <a href="https://github.com/pocketix" target="_blank">Pocketix GitHub
+	Organization</a>.</p>
+
+<p><strong>Pocketix V1</strong> specifically refers to the current ecosystem of editors and interpreter built around the
+	first version of the Pocketix scripting language.</p>
+
+
+<div class="section">
+	<h2>Pocketix V1 Editor (React & Angular)</h2>
+	<p><strong>pocketix-react</strong> and <strong>pocketixng</strong> provide drag-and-drop interfaces for designing
+		automation flows. These editors are ideal for non-programmers and built on React and Angular respectively.</p>
+	<ul>
+		<li><a href="https://pocketix-react.pocketix.org/" target="_blank">React Editor Demo</a></li>
+		<li><a href="https://pocketixng.pocketix.org/" target="_blank">Angular Editor Demo</a></li>
+	</ul>
+
+	<h3>Key Features</h3>
+	<ul>
+		<li>Block and form-based editing</li>
+		<li>Configurable conditions and actions</li>
+		<li>Device integration and workflow logic</li>
+		<li>Compatible with Pocketix V1 scripting</li>
+	</ul>
+
+	<h3>Quick Start</h3>
+	<code>git clone &lt;repo_url&gt;<br/>cd &lt;repo_dir&gt;<br/>npm run install:all<br/>npm run start:demo</code>
+	<p>Replace <code>&lt;repo_url&gt;</code> and <code>&lt;repo_dir&gt;</code> with the actual repository info.</p>
+</div>
+
+<div class="section">
+	<h2>Pocketix Node Interpreter</h2>
+	<p><strong>Pocketix Node</strong> is the backend logic engine that interprets automation flows from the editors and
+		outputs clean, testable commands — with zero risk of triggering hardware unintentionally.</p>
+
+	<h3>Key Features</h3>
+	<ul>
+		<li>Dry-run automation execution</li>
+		<li>Command & state generation engine</li>
+		<li>Extendable with custom device logic</li>
+	</ul>
+
+	<h3>Run a Program</h3>
+	<code>
+		const runner = new ProgramRunner()<br/>
+		.setCommander(commander)<br/>
+		.setReferenceManager(referenceManager)<br/>
+		.parseProgram(program);<br/><br/>
+
+		const {{ commands, toUpdate }} = await runner.run();
+	</code>
+
+	<h3>Testing</h3>
+	<code>npm run test</code>
+</div>
+
+<div class="section">
+	<h2>Related Links</h2>
+	<ul>
+		<li><a href="https://github.com/pocketix" target="_blank">Pocketix GitHub Org</a></li>
+		<li><a href="https://github.com/pocketix/pocketix-node-core" target="_blank">Node Core for IoT</a></li>
+	</ul>
+</div>
+
+<div class="section">
+	<h2>Contributing & License</h2>
+	<p>All Pocketix V1 components are open-source under the MIT License. Contributions are warmly welcomed via pull
+		requests on GitHub.</p>
+</div>
+
+</body>
+</html>
