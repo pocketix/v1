@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>IoTiX Interpreter Project Overview</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page-container">
+    <h1>IoTiX Interpreter Project Overview</h1>
+    <p><strong>Pocketix</strong> is a modular and system-agnostic program execution engine implemented as a Node.js package
+        developed
+        by <a href="mailto:ijohn@fit.vut.cz">Petr John</a> and <a href="mailto:hynek@fit.vut.cz">Jiří Hynek</a> at <a
+                href="https://www.fit.vut.cz/.en" target="_blank">BUT FIT</a>, primarily aimed at automating smart devices
+        on mobile phones.</p>
+
+    <p>The first prototype was created through a collaboration between BUT FIT and <a href="https://www.logimic.com/cs/"
+                                                                                      target="_blank">Logimic</a> as part of
+        the project <em>Services for Water Management and Monitoring Systems in Retention Basins</em>.</p>
+
+    <p>More information is available on the <a href="https://github.com/pocketix" target="_blank">Pocketix GitHub
+        Organization</a>.</p>
+
+    <p>The <strong>IoTiX Interpreter</strong>, is built around two core interfaces, IReferenceManager and ICommander,
+        which abstract system-specific details and enable integration with diverse environments, including those with
+        custom digital twins or non-JavaScript runtimes. IReferenceManager manages loading and storing of device
+        parameters, while ICommander handles the dispatching of execution commands. Program execution begins with the
+        creation of a ProgramRunner, which parses the program into an Abstract Syntax Tree (AST) and constructs a
+        dependency table. Each block in the program can be evaluated and visually represented, ensuring alignment between
+        graphical and textual logic. The evaluation process involves retrieving parameters, binding values, traversing the
+        AST, and dispatching the resulting commands through the provided interfaces.
+    </p>
+
+    <p>Through this architecture, the IoTiX Interpreter provides a powerful backend for executing IoTiX scripts,
+        enabling consistent and adaptable automation across smart environments.
+    </p>
+
+    <div class="section">
+        <h2>IoTiX Node Interpreter</h2>
+        <p><a href="https://github.com/pocketix/pocketix-node" target="_blank">Pocketix Node</a>
+            is the backend logic engine that interprets automation flows from the editors and
+            outputs clean, testable commands — with zero risk of triggering hardware unintentionally.</p>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li>Dry-run automation execution</li>
+            <li>Command & state generation engine</li>
+            <li>Extendable with custom device logic</li>
+        </ul>
+
+        <h3>Run a Program</h3>
+        <code>
+            const runner = new ProgramRunner()<br/>
+            .setCommander(commander)<br/>
+            .setReferenceManager(referenceManager)<br/>
+            .parseProgram(program);<br/><br/>
+
+            const {{ commands, toUpdate }} = await runner.run();
+        </code>
+
+        <h3>Testing</h3>
+        <code>npm run test</code>
+    </div>
+
+    <div class="section">
+        <h2>Related Links</h2>
+        <ul>
+            <li><a href="https://github.com/pocketix" target="_blank">Pocketix GitHub Org</a></li>
+            <li><a href="/" target="_blank">IoTiX Environment</a></li>
+            <li><a href="../editor" target="_blank">IoTiX Editor</a></li>
+            <li><a href="https://github.com/pocketix/pocketix-node-core" target="_blank">Node Core for IoT</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Contributing & License</h2>
+        <p>All IoTiX components are open-source under the MIT License. Contributions are warmly welcomed via pull
+            requests on GitHub.</p>
+    </div>
+</div>
+</body>
+</html>

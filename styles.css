@@ -1,0 +1,142 @@
+:root {
+    --primary: #4a90e2;
+    --accent: #00c9a7;
+    --bg: #f9fafa;
+    --text: #2c3e50;
+    --code-bg: #2e3b4e;
+    --code-text: #ecf0f1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    color: var(--primary);
+    margin-top: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.section:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+code, pre {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 1rem;
+    border-radius: 8px;
+    display: block;
+    overflow-x: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+h4 {
+    color: var(--primary);
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+iframe {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+iframe:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.img-center {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.img-center img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.img-center img:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+.texttt {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    background: none;
+    padding: 0.1em 0.2em;
+    border-radius: 4px;
+    color: var(--text);
+    letter-spacing: 0.5px;
+}
+.page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+@media (max-width: 768px) {
+    .page-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        padding: 0.5rem;
+    }
+
+    .section {
+        padding: 0.5rem;
+    }
+}
